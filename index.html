@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personal Portfolio</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body>
+<body class="m-0 p-0">
   <header
-    class=" bg-linear-to-bl from-violet-500 to-fuchsia-500 bg-[url(./images/bg-cover.jpg)] bg-cover bg-center h-[50] md:h-screen py-4 px-16">
-    <nav class="flex flex-row justify-around items-center bg-purple-600 p-4  items-center text-white py-4">
+    class=" bg-linear-to-bl from-violet-500 to-fuchsia-500 bg-[url(./images/bg-cover.jpg)] bg-cover bg-center h-[50] ">
+    <nav id="navbar" class="flex flex-row justify-around items-center bg-transparent  md:p-4  items-center text-white py-2 md:py-4 cursor-pointer fixed left-0 right-0 ">
       <div>
         <span class="text-xl md:text-2xl italic"><a href="#">Salomey.</a></span>
       </div>
@@ -22,11 +22,11 @@
 
       <!--For Desktops  -->
       <div class="hidden md:flex justify-between gap-4 md:gap-6 text-sm md:text-lg" >
-        <span><a href="#">Home</a></span>
-        <span><a href="#">About</a></span>
-        <span><a href="#">Profile</a></span>
-        <span><a href="#">Projects</a></span>
-        <span><a href="#">Contact</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#">Home</a></span>
+        <span class="hover:text-[#F90DBF]" ><a href="#about">About</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#profile">Profile</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#projects">Projects</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#contact">Contact</a></span>
       </div>
 
 
@@ -35,67 +35,72 @@
         <i class="material-icons">menu</i>
       </button>
 
+      <!-- close button -->
+       <button class="hidden" id="close"> 
+       <i class="material-icons" id="close">close</i>
+       </button>
+
 
 <!-- Hamburger Menu -->
-  <div class=" hidden md:hidden md:flex justify-between gap-4 md:gap-6 text-sm md:text-lg" id="mobileMenu">
-        <span><a href="#">Home</a></span>
-        <span><a href="#">About</a></span>
-        <span><a href="#">Profile</a></span>
-        <span><a href="#">Projects</a></span>
-        <span><a href="#">Contact</a></span>
+  <div class="flex hidden flex-col p-4 bg-purple-600 text-white md:hidden gap-4 fixed top-13 right-14" id="mobileMenu">
+        <span class="hover:text-[#F90DBF]"><a href="#">Home</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#about">About</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#profile">Profile</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#projects">Projects</a></span>
+        <span class="hover:text-[#F90DBF]"><a href="#contact">Contact</a></span>
       </div>
 
     </nav>
-    <!-- .............. -->
+
     <div class="flex flex-col items-center">
-      <div>
-        <img src="./images/20250526_092430.jpg" class="w-45 rounded h-42 my-14" alt="image of me">
+      <div >
+        <img src="./images/bg-img.jpg" class="rounded h-42 my-14 " alt="image of me">
       </div>
       <div class="flex flex-col items-center ml-6 md:ml-12">
-        <p class=" header-p text-purple-600 text-2xl md:text-4xl p-2 italic">Hi There!</p>
+        <p class=" header-p text-[#F90DBF] text-2xl md:text-4xl p-2 italic">Hi There!</p>
         <h2 class="text-xl md:text-2xl p-2 font-bold">I'm Salomey Tackie</h2>
         <p class="text-lg md:text-xl font-semibold p-4">I'm junior web developer</p>
       </div>
       <div>
-        <button class=" header-button bg-purple-600 px-8 py-4 rounded-sm text-white text-sm">Contact me</button>
+        <a href="#contact">
+          <button class=" header-button bg-purple-600 px-8 py-4 rounded-sm text-white text-sm">CONTACT ME</button>
+          </a>
       </div>
     </div>
   </header>
 
   <body>
-    <section class="flex flex-col items-center p-4 bg-purple-200">
-      <div class="flex flex-col text-xl font-semibold items-center p-4 text-purple-600">
-        <h2>About Me</h2>
+    <section class="flex flex-col items-center p-2 md:p-4  h-[80vh]">
+      <div class="flex flex-col text-xl font-semibold items-center p-2 md:p-4 text-purple-600">
+        <h2 id="about">About Me</h2>
       </div>
-      <div class="flex flex-col md:flex-row justify-around gap-10">
-        <img src="./images/OWN-Concepts-0188.jpg" alt="profile image" class=" about-img w-80 md:w-60">
+      <div class="flex flex-col md:flex-row justify-around gap-10 h-[40vh]">
+        <img src="./images/OWN-Concepts-0188.jpg" alt="profile image" class=" about-img w-50 md:w-60">
         <div>
-          <div class="flex p-2">
-            <p class="text-center text-sm md:text-lg/7 w-100 md:w-140 about-p">A junior frontend developer with a solid grasp of
-              web development
-              fundamentals and hands-on experience building responsive interfaces using HTML, CSS, JavaScript, and
-              React. Strong eye for design, user experience, and detail, with a passion for turning ideas into
-              interactive digital products. Known for being a fast learner, a proactive team player, and someone who
-              embraces challenges as opportunities to grow. Ready to contribute fresh ideas and energy to a
-              forward-thinking development team.</p>
+          <div class="flex md:p-2">
+            <p class="text-justify text-sm md:text-lg/7 w-60 md:w-140 about-p h-[30vh] ">A junior frontend developer with a strong foundation in HTML, CSS, JavaScript, and React. Experienced in building responsive and user-friendly interfaces. Brings a keen eye for design, usability, and detail. Recognized for being a quick learner and a collaborative team member. Eager to contribute fresh ideas and enthusiasm to a dynamic development team.</p>
           </div>
-          <div class="flex flex-row gap-4 pt-4">
+          <div class="flex flex-row gap-4  pt-2">
+            <a href="#contact">
             <button class=" about-button bg-[#F90DBF]  py-4 px-8 rounded-sm text-white text-sm ">HIRE ME</button>
-            <button class=" about-button bg-purple-600 px-8 py-4 rounded-sm text-white text-sm">DOWNLOAD CV</button>
+            </a>
+            <a href="./assets/Salomey's- resume.pdf">
+            <button class=" about-button bg-purple-600 px-8 py-4 rounded-sm text-white text-sm">VIEW RESUME</button>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="flex flex-col">
+    <section class="flex flex-col md:p-2 h-[60vh] md:h-[50vh] bg-purple-200 ">
       <div>
-        <h2 class="flex flex-col text-xl font-semibold items-center p-4 text-purple-600">My Profile</h2>
+        <h2 class="flex flex-col text-xl font-semibold items-center p-4 text-purple-600" id="profile">My Profile</h2>
       </div>
-      <div class="flex flex-col">
-        <div class="flex flex-col p-4  items-center ">
-          <h3 class="text-center text-2xl font-semibold p-4 text-[#F90DBF]">My Experiences</h3>
+      <!-- <div class="flex flex-col"> -->
+        <!-- <div class="flex flex-col p-4  items-center ">
+          <h3 class="text-center text-3xl font-bold p-4 text-[#F90DBF]">My Experiences</h3>
           <div class="flex flex-col justify-around gap-4 w-[80%] mx-auto">
-            <h3 class="font-medium">Responsive Web Development & UI Design</h3>
+            <h3 class="font-bold">Responsive Web Development & UI Design</h3>
             <p>Jan 2025 -Present</p>
             <ul class="list-disc section-exp">
               <li class="p-2 text-lg">Built multiple responsive websites from scratch using HTML, TailwindCSS, and
@@ -109,17 +114,14 @@
               <li class="p-2 text-lg">Prioritized accessibility, ensuring semantic HTML structure, color contrast, and
                 keyboard navigation support for an inclusive user experience</li>
             </ul>
-
-
-
-          </div>
-        </div>
+          </div> -->
+        <!-- </div> -->
       </div>
-      <hr class="w-24 mx-auto border-t-2 border-purple-300">
+        <hr class="w-24 mx-auto border-t-2 border-purple-300">
       <span>
-        <h3 class="text-2xl font-semibold p-4 text-center text-[#F90DBF]">My Skill Sets</h3>
+        <h3 class="text-3xl font-bold p-4 text-center text-[#F90DBF]">My Skill Sets</h3>
       </span>
-      <div class=" flex items-center justify-center h-[30vh] gap-10 flex-wrap">
+      <div class=" flex items-center justify-center h-[30vh] gap-10 flex-wrap  ">
         <!-- Html & Css -->
         <div class="text-center">
           <div class="relative w-[120px] h-[120px] mb-3 rotate  ">
@@ -179,34 +181,40 @@
       </div>
       </div>
     </section>
-    <section class="flex flex-col p-4 ">
+    <section class="flex flex-col p-14 md:p-4 ">
       <div>
-        <h2 class="flex flex-col text-xl font-semibold items-center p-4 text-purple-600">Projects</h2>
+        <h2 class="flex flex-col text-xl font-semibold items-center py-6 text-purple-600" id="projects">Projects</h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto ">
         <span>
-          <a href="#"><img src="./images/Running a business is hard_ No customers_ Too much….jpg" alt="startup image"
+          <a href="https://startup-project-lovat.vercel.app/" target="_blank"><img src="./images/Running a business is hard_ No customers_ Too much….jpg" alt="startup image"
               class="w-64 section-img"></a>
               <h3 class="font-bold">Startup Business</h3>
-          <button class="border-2 mt-2 p-2 bg-[#F90DBF] text-white border-none rounded-sm">View More</button>
+          <a href="https://startup-project-lovat.vercel.app/" target="_blank">
+<button class="border-2 mt-2 p-2 bg-[#F90DBF] text-white border-none rounded-sm">View More</button>
+          </a>
         </span>
         <span>
-          <a href="#"><img src="./images/Exterior design classic hotel design elegant white….jpg" alt="hotel image"
+          <a href="https://travel-landing-page-seven-ashen.vercel.app/" target="_blank"><img src="./images/Exterior design classic hotel design elegant white….jpg" alt="hotel image"
               class="w-64 section-img"></a>
          <h3 class="font-bold">Vacation Hotel </h3>
-              <button class="border-2 flex items-center mt-2 p-2 bg-[#F90DBF] border-none text-white rounded-sm">View
+         <a href="https://travel-landing-page-seven-ashen.vercel.app/" target="_blank">
+              <button class="border-2 flex items-center mt-2 p-2 bg-[#F90DBF] border-none text-white  rounded-sm">View
             More</button>
+            </a>
         </span>
         <span>
-          <a href="#"><img src="./images/recipes.jpg" alt="recipes image" class="w-64 section-img"></a>
+          <a href="https://korean-recipes-eta.vercel.app/" target="_blank"><img src="./images/recipes.jpg" alt="recipes image" class="w-64 section-img"></a>
           <h3 class="font-bold">Korean Recipe </h3>
+          <a href="https://korean-recipes-eta.vercel.app/" target="_blank">
           <button class="border-2 mt-2 p-2 bg-[#F90DBF] border-none text-white rounded-sm">View More</button>
+          </a>
         </span>
         <span>
           <a href="#"><img src="./images/Must visit Korean restaurants in Ottawa! You will….jpg" alt="korean house"
               class="w-64 section-img "></a>
               <h3 class="font-bold">BBQ House</h3>
-          <button class="border-2 mt-2 p-2 bg-[#F90DBF] border-none text-white rounded-sm">View More</button>
+          <button class="border-2 mt-2 p-2 bg-[#F90DBF] border-none text-white  rounded-sm">View More</button>
         </span>
         <span>
           <a href="#"><img src="./images/weather app.jpg" alt="weather app" class="w-64 section-img"></a>
@@ -220,11 +228,10 @@
         </span>
       </div>
     </section>
-    <section class="flex flex-col py-6 bg-purple-200">
+    <section class="flex flex-col py-6 bg-purple-200 ">
       <div class="flex flex-col text-center justify-around gap-4 container">
-        <h2 class="flex flex-col text-xl font-semibold items-center pt-4 text-purple-600">Contact Me</h2>
-        <h3 class="text-3xl para1 font-medium text-[#F90DBF]">I'm open to work</h3>
-        <p class="text-4xl para2 ">Let discuss the way forward</p>
+        <h2 class="flex flex-col text-xl font-semibold items-center  text-purple-600" id="contact">Get In Touch</h2>
+      
       </div>
       <div class="flex flex-col justify-around gap-20  pt-8 w-[60%] mx-auto md:flex-row ">
         <form action="https://formspree.io/f/myzwraar" method="post" class="flex flex-col max-w-xl mx-auto space-y-4">
@@ -262,7 +269,7 @@
       </div>
     </section>
   </body>
-  <footer class="bg-purple-400 flex flex-col justify-around gap-8 p-4 items-center">
+  <footer class="bg-purple-400 flex flex-col justify-around gap-8 p-2 md:p-4 items-center">
 
     <div class="flex space-x-6 py-6">
       <a href="https://ww.facebook.com/salomeytackie" target="_blank" class="text-white">
@@ -297,7 +304,7 @@
         </svg>
     </div>
 
-    <div class="pt-6 text-white border-t-1">
+    <div class=" p-4 md:p-6 text-white border-t-1">
       <p>Copyright &copy; 2025 Salomey Tackie. All rights reserved</p>
     </div>
   </footer>

@@ -4,19 +4,22 @@
 
 .header-p{
     animation: fadeIn 3s ease-in forwards;
+    
 }
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 3; }
   }
 
   .about-button{
-      
     transition: transform 0.3s ease;
+  
   }
 
   .about-button:hover {
     transform: scale(1.1); /* Grow */
+  
   }
   
 .header-button{
@@ -34,10 +37,12 @@
 
 .about-img{
     animation: slideInLeft 2s ease-out forwards;
+
 }
 
 .about-p{
     animation: slideInRight 2s ease-out forwards;
+    
 }
 
    @keyframes slideInLeft {
@@ -64,10 +69,12 @@
 
   .section-exp{
     animation: slideInRight 2s ease-out forwards;
+    
   }
 
   .rotate{
     animation: spin 2s linear infinite;
+    
   }
 
   @keyframes spin {
@@ -77,6 +84,7 @@
 
   .section-img{
     transition: transform 0.3s ease;
+    
   }
 
   .section-img:hover{
